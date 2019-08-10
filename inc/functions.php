@@ -71,11 +71,11 @@ include 'quotes.php';
 # Code
 
 //refresh the page every 5 seconds - Will execute new quote and background image being generated
-header("refresh: 5");
+header("refresh: 6");
 
 // Return a new random quote each time this function is invoked
 function getRandomQuote($arr) {
-    // get the value of quotes using a super global 
+    // get the quotes array using a super global 
     $arr = $GLOBALS['quotes'];
     return $arr[rand(0, count($arr) - 1)];
 }
