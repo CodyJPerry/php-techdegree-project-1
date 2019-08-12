@@ -80,17 +80,10 @@ function getRandomQuote($arr) {
     return $arr[rand(0, count($arr) - 1)];
 }
 
-// Build the quote out 
+// print a random quote
 function printQuote($arr) {
-  // start output string
-  $output = '';
-  // get a single quote 
-  $quote = getRandomQuote($arr);
-  // Build the quote and return it
-  $output = '<p class="quote">' . $quote['quote'] . '</p>';
-  $output .= '<p class="source mt-4">' . $quote['source'] . '</p>';
-  $output .= '<h2 class="btn btn-primary category">Category: <span class="font-italic">' . $quote['category'] . '</span></p>';
-  return $output;
+  // get a random quote from the array
+  return getRandomQuote($arr);
 }
 
 // Print a random image to the screen
@@ -99,6 +92,6 @@ function getRandomImage($arr) {
   $quote = getRandomQuote($arr);
   // add a random quotes category and generate a random image
   $img_src = "https://source.unsplash.com/random?" . $quote['category'];
-  // build the full image markup and return it
-  return '<img src="' . $img_src . '" alt="Unsplash Random Image">';
+  // return the image source
+  return $img_src;
 }

@@ -2,6 +2,8 @@
 // Including functions file that will be used in the html
 // calling printQuote in the html container will build out a random quote with a quote, source, and category
 include 'inc/functions.php';
+// get a single random quote
+$quote = printQuote($quotes);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,10 +21,12 @@ include 'inc/functions.php';
 <body>
   <div class="container-fluid px-0">
     <div class="view">
-      <?php echo getRandomImage($quotes); ?>
+      <img src="<?php echo getRandomImage($quotes); ?>" alt="Unsplash Random Image">
     <div class="mask flex-center rgba-black-strong">
       <div id="quote-box">
-       <?php echo printQuote($quotes); ?>
+       <p class="quote"><?php echo $quote['quote']; ?></p>
+       <p class="source mt-4"><?php echo $quote['source']; ?></p>
+       <h2 class="btn btn-primary category">Category: <span class="font-italic"><?php echo $quote['category']; ?></span></p>
       </div>
     </div>
   </div>
