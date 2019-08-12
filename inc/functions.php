@@ -70,7 +70,7 @@ include 'quotes.php';
 
 # Code
 
-//refresh the page every 6 seconds - Will execute new quote and background image being generated
+//refresh the page every 5 seconds - Will execute new quote and background image being generated
 header("refresh: 6");
 
 // Return a new random quote each time this function is invoked
@@ -84,14 +84,4 @@ function getRandomQuote($arr) {
 function printQuote($arr) {
   // get a random quote from the array
   return getRandomQuote($arr);
-}
-
-// Print a random image to the screen
-function getRandomImage($arr) {
-  // get a single quote
-  $quote = getRandomQuote($arr);
-  // add a random quotes category and generate a random image
-  $img_src = "https://source.unsplash.com/random?" . $quote['category'];
-  // return the image source
-  return $img_src;
 }

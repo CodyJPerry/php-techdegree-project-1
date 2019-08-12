@@ -7,13 +7,12 @@ body {
 }
 
 #quote-box {
-  position: absolute;
-  top: 35%;
-  left: 10%;
-  right: 10%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   line-height: .5;
   z-index: 5;
+  background: rgba(0, 0, 0, .45);
+  padding: 200px;
 }
 
 .quote {
@@ -102,6 +101,13 @@ img {
   font-family: sans-serif;
   font-size: 0.9rem;
   cursor: default;
+}
+
+
+@media (max-width: 1000px) {
+  #quote-box {
+    padding: 100px 50px;
+  }
 }
 
 

@@ -21,12 +21,12 @@ $quote = printQuote($quotes);
 <body>
   <div class="container-fluid px-0">
     <div class="view">
-      <img src="<?php echo getRandomImage($quotes); ?>" alt="Unsplash Random Image">
+      <img src="https://source.unsplash.com/random?<?= $quote['category']; ?>" alt="Unsplash Random Image">
     <div class="mask flex-center rgba-black-strong">
       <div id="quote-box">
-       <p class="quote"><?php echo $quote['quote']; ?></p>
-       <p class="source mt-4"><?php echo $quote['source']; ?></p>
-       <h2 class="btn btn-primary category">Category: <span class="font-italic"><?php echo $quote['category']; ?></span></p>
+       <p class="quote"><?= $quote['quote']; ?></p>
+       <p class="source my-4"><?= $quote['source']; ?></p>
+       <h2 class="btn btn-primary category">Category: <span class="font-italic"><?= $quote['category']; ?></span></p>
       </div>
     </div>
   </div>
